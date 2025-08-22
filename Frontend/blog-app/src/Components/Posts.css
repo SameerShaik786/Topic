@@ -1,0 +1,29 @@
+/* src/Components/Posts.css */
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+ 
+  gap: 24px;
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .posts-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}

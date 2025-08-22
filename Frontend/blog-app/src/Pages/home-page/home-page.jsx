@@ -4,11 +4,21 @@ import { MdLogout } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import {useState} from 'react';
 
+import {useNavigate} from 'react-router-dom';
+
 const HomePage = () => {
+  const navigate=useNavigate();
   const [showProfile,updateShowProfile] = useState(false);
   const changeShowProfile = () => {
       updateShowProfile(prev => !prev);
   }
+
+  const handleGetTopic=(e)=>{
+    if(e.key=='Enter'){
+    navigate('/topic-page');
+    }
+
+  };
   return (
     <div className='open-page-container'>
       <div className="flex justify-between bg-[#3a5a78] px-7 h-20">
@@ -32,8 +42,8 @@ const HomePage = () => {
       <div className='main-page-middle-container'>
         <h1 className='head'>Topic</h1>
         <div className='home-page-input-container'>
-        <input type='text' className='home-page-input' placeholder="Search"/>
-        <button className='search-icon-button'>
+        <input type='text' className='home-page-input' placeholder="Search" onKeyDown={handleGetTopic}/>
+        <button className='search-icon-button' onClick={()=>{navigate('/topic-page')}} >
             <IoIosSearch className='search-icon-image'/>
         </button>
         </div>

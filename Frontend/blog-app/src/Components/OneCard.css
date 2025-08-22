@@ -1,0 +1,42 @@
+.profile-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+    overflow: hidden;  
+    height:350px;
+   max-width: 350px; 
+   
+  }
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.profile-name {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+
+.profile-description {
+  font-size: 1rem;
+  color: #555;
+    overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 12;     
+  -webkit-box-orient: vertical; 
+}
+
+

@@ -2,10 +2,11 @@ import './login-page.css';
 import { MdOutlineMailOutline } from "react-icons/md";
 import { TbLockPassword } from "react-icons/tb";
 import { useState } from 'react';
-import {Link} from 'react-router-dom';
+import {Link,useNavigate} from 'react-router-dom';
 
 
 const Login = () => {
+    const navigate=useNavigate();
     const [emailSearch,updateEmailSearch] = useState('');
     const [passwordSearch,updatePasswordSearch] = useState('');
     const [loginCredentials,updateLoginCredentials] = useState({email: '',password: ''});
@@ -37,14 +38,14 @@ const Login = () => {
                     <label className='login-label'>Password</label>
                     <div className='login-label-input-contianer'>
                         <TbLockPassword className='email-icon'/>
-                        <input type="password" placeholder='Enter your Password' value={passwordSearch} className="login-label-input" onClick={updatePassword}/>
+                        <input type="password" placeholder='Enter your Password' value={passwordSearch} className="login-label-input" onChange={updatePassword}/>
                     </div>
                 </div>
                 <div className='new-account'>
-                <button className='new-account-button'><p className='create-account-para'>Create account</p></button></div>
+                <button className='new-account-button' onClick={()=>navigate('/register',{replace:true})}><p className='create-account-para'>Create account</p></button></div>
                 <div className='error-message'><p className="login-error-message"></p></div>
                 <button className='login-button' type="submit">
-                    <Link to="/">Login</Link></button>
+                    <Link to="/home" replace>Login</Link></button>
             </form>
         </div>
     )

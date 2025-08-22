@@ -6,8 +6,10 @@ import { CiCalendar } from "react-icons/ci";
 import { useState } from 'react';
 import '../Login-page/login-page.css';
 import './register-page.css';
+import {useNavigate} from 'react-router-dom';
 
 const Register = () => {
+    const navigate=useNavigate();
     const [emailSearch,updateEmailSearch] = useState('');
     const [passwordSearch,updatePasswordSearch] = useState('');
     const [loginCredentials,updateLoginCredentials] = useState({email: '',password: ''});
@@ -21,7 +23,9 @@ const Register = () => {
 
     const registerFormSubmission = event => {
         event.preventDefault();
+        
         updateLoginCredentials({email: emailSearch,password: passwordSearch});
+        navigate('/login',{replace:true});
     }
     
     return (
@@ -91,7 +95,7 @@ const Register = () => {
                 <div className='new-account'>
                 <button className='new-account-button'><p className='create-account-para'>Go to Login</p></button></div>
                 <div className='error-message'><p className="login-error-message"></p></div>
-                <button className='login-button' type="submit">Sign Up</button>
+                <button className='login-button' type="submit" >Sign Up</button>
             </form>
         </div>
     )
