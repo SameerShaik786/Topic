@@ -1,0 +1,23 @@
+.register-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Inter','Helvetica','Arial','sans-serif';
+    background-color: #FAF7F3;
+    padding:10px;
+}
+.register-form{
+    width:35%;
+    margin:20px;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.radio-label{
+    margin-right:20px;
+    font-size: 14px;
+    color:#7A7A7A;
+}
+.radio-container{
+    padding:10px;
+}
